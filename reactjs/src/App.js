@@ -17,7 +17,7 @@ function App() {
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://github.com/jashish24/headless-drupal-example"
           target="_blank"
           rel="noopener noreferrer"
         >
