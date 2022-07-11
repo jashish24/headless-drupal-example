@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
+langcode: en
+uuid: eed9455f-a526-4004-ba1f-8c9c17e2fe62
+name: 'Eastern Enterprise - Drupal Meetup (July, 2022)'
+mail: jashish24@gmail.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en

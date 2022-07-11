@@ -1,0 +1,31 @@
+uuid: 6bc227ed-5265-4fdf-a7a3-4a413f9ff4ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.restricted_html
+    - node.type.article
+    - node.type.page
+  module:
+    - comment
+    - contact
+    - filter
+    - node
+    - search
+    - system
+_core:
+  default_config_hash: 6WavjUYXIegP9AAg2zXGx54MWIVoomC3SZhNiqe-Dyk
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'create article content'
+  - 'create page content'
+  - 'delete any article content'
+  - 'delete any page content'
+  - 'search content'
+  - 'use text format restricted_html'

@@ -1,0 +1,33 @@
+name: drupal-meetup
+recipe: drupal9
+proxy:
+  reactjs:
+    - reactjs.lndo.site
+config:
+  composer_version: 2
+services:
+  appserver:
+    webroot: ./drupal/web
+  reactjs:
+    webroot: ./reactjs
+    portforward: 3000
+    type: node:14
+    ssl: true
+    port: 3000
+    build:
+      - yarn create react-app reactjs
+    command:
+      - cd reactjs && yarn start
+tooling:
+  npx:
+    service: reactjs
+    cmd: cd /app/reactjs && npx
+  npm:
+    service: reactjs
+    cmd: npm --cwd=/app/reactjs
+  drush:
+    service: appserver
+    cmd: /app/drupal/vendor/bin/drush --root=/app/drupal/web
+  composer:
+    service: appserver
+    cmd: composer --working-dir=/app/drupal

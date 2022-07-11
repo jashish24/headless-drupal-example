@@ -1,0 +1,70 @@
+<?php
+
+/**
+ * @file
+ * Contains devel_kint_extras.module.
+ */
+
+use Drupal\Core\Messenger\MessengerInterface;
+
+if (!function_exists('kint')) {
+
+  /**
+   * Prints passed argument(s) using Kint debug tool.
+   *
+   * Wrapper for DevelDumperManager::dump().
+   *
+   * @see \Drupal\devel\DevelDumperManager::dump()
+   */
+  function kint() {
+    $args = func_get_args();
+    if (count($args) == 1) {
+      // Pass a single argument directly, which works for any plug-in.
+      $args = $args[0];
+      $name = NULL;
+    }
+    else {
+      // Pass an array marked with a special name. The kint plug-in expands the
+      // arguments and prints each separately.
+      $name = '__ARGS__';
+    }
+
+    // Get dumper from settings.
+    $variables_dumper = \Drupal::config('devel.settings')->get('devel_dumper');
+    $variables_dumper ?? 'kint';
+
+    return \Drupal::service('devel.dumper')->dump($args, $name, $variables_dumper);
+  }
+
+}
+
+if (!function_exists('ksm')) {
+
+  /**
+   * Prints passed argument(s) to the 'message' area of the page.
+   *
+   * Wrapper for DevelDumperManager::message().
+   *
+   * @see \Drupal\devel\DevelDumperManager::message()
+   */
+  function ksm() {
+    $args = func_get_args();
+    if (count($args) == 1) {
+      // Pass a single argument directly, which works for any plug-in.
+      $args = $args[0];
+      $name = NULL;
+    }
+    else {
+      // Pass an array marked with a special name. The kint plug-in expands the
+      // arguments and prints each separately.
+      $name = '__ARGS__';
+    }
+
+    // Get dumper from settings.
+    $variables_dumper = \Drupal::config('devel.settings')->get('devel_dumper');
+    $variables_dumper ?? 'kint';
+
+    return \Drupal::service('devel.dumper')->message($args, $name, MessengerInterface::TYPE_STATUS, $variables_dumper);
+  }
+
+}

@@ -1,0 +1,5 @@
+<?php
+
+function devel_kint_extras_install() {
+  module_set_weight('devel_kint_extras', -1);
+}
