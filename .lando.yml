@@ -9,13 +9,10 @@ services:
   appserver:
     webroot: ./drupal/web
   reactjs:
-    webroot: ./reactjs
-    portforward: 3000
     type: node:14
-    ssl: true
+    portforward: true
     port: 3000
-    build:
-      - yarn create react-app reactjs
+    ssl: true
     command:
       - cd reactjs && yarn start
 tooling:
