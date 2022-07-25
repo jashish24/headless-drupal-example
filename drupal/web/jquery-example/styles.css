@@ -1,0 +1,25 @@
+#article-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+
+#article-list > div {
+  background-color: dodgerblue;
+  color: white;
+  padding: 1rem;
+  min-height: 4rem;
+}
+
+#article-list > div span {
+  display: block;
+}
+
+@media (min-width: 600px) {
+  #article-list { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+  #article-list { grid-template-columns: repeat(3, 1fr); }
+}
