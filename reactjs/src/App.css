@@ -1,17 +1,18 @@
 main {
-  background-color: #0B0;
+  background-color: ivory;
   display: flex;
 }
 main .node-list {
   min-width: 50%;
+  margin: 2%;
 }
 main h3 {
   margin: 0;
+  font-size: 20px;
 }
 main tr {
   background: #69CBE1;
   box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-  min-width: 600px;
   height: 60px;
   margin: 10px 0;
   display: block;
@@ -24,20 +25,31 @@ main tr:hover {
   height: 40vmin;
   pointer-events: none;
 }
+main table {
+  width: 100%;
+}
 main tr td {
-  min-width: 200px;
+  width: 30%;
+  display: block;
+  float: left;
+  margin: 1%;
 }
 .create-node-form {
-  max-width: 600px;
   align-content: center;
-  margin: 50px 0 0 50px;
+  margin: 50px 0 0 100px;
   padding-bottom: 50px;
   border: 2px solid;
   background: burlywood;
   height: 200px;
+  margin-top: 10%;
+  width: 20%;
 }
 .create-node-form h4, .create-node-form form {
   margin: 20px;
+}
+main textarea {
+  width: 80%;
+  height: 50px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

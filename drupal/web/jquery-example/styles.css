@@ -1,19 +1,44 @@
+body {
+  font-family: sans-serif;
+}
+
 #article-list {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
   gap: 1rem;
+  margin-bottom: 100px;
 }
 
 #article-list > div {
-  background-color: dodgerblue;
+  border: 10px solid deepskyblue;
   color: white;
   padding: 1rem;
-  min-height: 4rem;
+  min-height: 14rem;
+  box-shadow: 0px 0px 15px #000;
+  min-width: 14rem;
 }
 
 #article-list > div span {
   display: block;
+  color: deepskyblue;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+#article-list > div span a {
+  font-weight: normal;
+  color: #000;
+  text-decoration: none;
+}
+
+#article-list > div span a:hover {
+  text-decoration: overline;
+}
+
+#article-list > div img {
+  max-width: 144px;
+  max-height: 144px;
 }
 
 @media (min-width: 600px) {
